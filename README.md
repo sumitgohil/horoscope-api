@@ -6,7 +6,7 @@ An API to extract **Horoscope**. You're free to use this API in any manner your 
 ----------
 
 
-**Features **
+**Features**
 -------------
 - Todays Horoscope
 - Weekly Horoscope
@@ -92,6 +92,7 @@ Example usage `GET https://horoscope-free-api.herokuapp.com/?time=year&sign=canc
 ==================
 
 **NOTE 1: This parses AskGanesh unofficially.**
+<br/>
 **NOTE2: If the API goes down, please open a issue or comment on already existing one with the problem(s) that you are facing. This is the best way to let me know that the API is not working, avoid sending email.**
 
 <a href='https://ko-fi.com/R6R75H96' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
