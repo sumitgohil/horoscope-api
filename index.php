@@ -74,7 +74,7 @@ else{
 if($time==null && $rashi==null){
 
 header("HTTP/1.1 ");
-	
+	$response['MESSAGE']="You're not supposed to remove this under the license. Credits to author should be given.";
 	$response['Author']="Sumit Gohil";
 	$response['Author_Website']="http://sumitgohil.com";
 	$response['project_name']="Horoscope Api";
