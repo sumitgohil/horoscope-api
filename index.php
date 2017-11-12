@@ -1,10 +1,16 @@
 <?php
 header("Content-Type:application/json");
+$time=null;
+$rashi=null;
 
+if(isset($_GET['time'])){
+$time=$_GET['time'];}
 
-
-$time=$_GET['time'];
+if(isset($_GET['sign'])){
 $rashi=$_GET['sign'];
+}
+
+if($time!=null && $rashi!=null){
 
 if(strcmp($time, 'today')===0){
 $time='daily';
@@ -51,35 +57,55 @@ if(!empty($html)){ //if any html is actually returned
 	}
 
 	
-}
-// echo $data;
-if($data!=null){
-response(200,"Product Found",$data);
-}else
-{
-response(400,"Some error, please try again later",NULL);
+	} 
+	if($data!=null){
 
-}
-// if(!empty($_GET['name']))
-// {
-// 	$name=$_GET['name'];
-// 	$price = get_price($name);
-	
-// 	if(empty($price))
-// 	{
-// 		response(200,"Product Not Found",NULL);
-// 	}
-// 	else
-// 	{
-// 		response(200,"Product Found",$price);
-// 	}
-	
-// }
-// else
-// {
-// 	response(400,"Invalid Request",NULL);
-// }
 
+	response(200,"Success",$data);
+	}else
+	{
+	response(400,"Some error, please try again later",NULL);
+
+	}
+}
+
+else{
+
+if($time==null && $rashi==null){
+
+header("HTTP/1.1 ");
+	
+	$response['Author']="Sumit Gohil";
+	$response['Author_Website']="http://sumitgohil.com";
+	$response['project_name']="Horoscope Api";
+	$response['project_url']="https://github.com/sumitgohil/horoscope-api";
+	$json_response = json_encode($response);
+	echo $json_response;
+}
+
+		elseif($time==null){
+			header("HTTP/1.1 Time not Defined ");
+	
+	$response['status']="error";
+	$response['status_message']="Time not Defined";
+
+	
+	$json_response = json_encode($response);
+	echo $json_response;
+		}
+		elseif ($rashi==null) {
+			header("HTTP/1.1 Sign not Defined ");
+	
+	$response['status']="error";
+	$response['status_message']="Sign not Defined";
+
+	
+	$json_response = json_encode($response);
+	echo $json_response;
+		}
+		
+
+	}
 function response($status,$status_message,$data)
 {
 	header("HTTP/1.1 ".$status_message);
