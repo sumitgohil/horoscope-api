@@ -33,7 +33,7 @@ An API to extract **Horoscope**. You're free to use this API in any manner your 
 **Daily Horoscope**
 **GET:**`/?time=today&sign=<sunsign>`
 
-Example usage `GET https://horoscope-free-api.herokuapp.com/?time=month&sign=cancer`
+Example usage `GET https://horoscope-free-api.herokuapp.com/?time=today&sign=cancer`
 > **Result:**
 
 >  {
